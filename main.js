@@ -9,7 +9,7 @@ app.on('ready', () => {
   // サーバーの実行
   var server = webProc.spawn(
     "node",
-    ['server.js'],
+    ['server.js', '/Users/haruto/Desktop/server/1.12.2/GtT1.12.2', 'minecraft_server.1.12.2.jar'],
     { cwd: __dirname } // サーバーファイルのディレクトリ
   );
 
