@@ -6,7 +6,10 @@ var MCservers = {} // サーバープロセスの集合体
 var MCserverManager = MCserverManager || {};
 // サブネームスペース
 MCserverManager.Server = {
-    start: function(Name, DirectoryPath, JarFileName) {
+    Init: function(Name) {
+        MCservers[Name] = false;
+    },
+    Start: function(Name, DirectoryPath, JarFileName) {
         if (Object.keys(MCservers).includes(Name)) {
             return false;
         } else {
@@ -15,21 +18,42 @@ MCserverManager.Server = {
                 // "java", ['-jar', argv[3], 'nogui'], { cwd: argv[2] } // サーバーファイルのディレクトリ
                 "java", ['-jar', DirectoryPath, 'nogui'], { cwd: JarFileName } // サーバーファイルのディレクトリ
             );
+            // ログ
+            Function(`
+            "use strict";
+            MCservers[` + Name + `].stdout.on('data', function(log) {
+                SendLog(` + Name + `, log)
+            });
+            MCservers[` + Name + `].stderr.on('data', function(log) {
+                SendLog(` + Name + `, log);
+            });
+            `)();
             return true;
         }
     },
-    get: function(Name) {
+    Get: function(Name) {
         if (Object.keys(MCservers).includes(Name)) {
             return MCservers[Name];
         }
         return false;
+    },
+    Command: function(Name, command) {
+        if (Object.keys(MCservers).includes(Name)) {
+            MCservers[Name].stdin.write(command + "\r");
+            return true;
+        } else {
+            return false;
+        }
     }
 };
 
+function SendLog(serverName, massage) {
+    MCserverManager.Discord.ServerLog(serverName, massage);
+}
 
 
 
-
+/*
 const http = require('http');
 const { getServers } = require('dns');
 
@@ -54,7 +78,7 @@ const webServer = http.createServer((req, res) => {
 webServer.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
-
+*/
 
 
 
