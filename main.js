@@ -17,8 +17,8 @@ app.on('ready', () => {
     // mainWindowを作成（windowの大きさや、Kioskモードにするかどうかなどもここで定義できる）
     mainWindow = new BrowserWindow({ width: 400, height: 300 });
     // Electronに表示するhtmlを絶対パスで指定（相対パスだと動かない）
-    // mainWindow.loadURL('file://' + __dirname + '/index.html');
-    mainWindow.loadURL('http://localhost:3500');
+    mainWindow.loadURL('file://' + __dirname + '/index.html');
+    // mainWindow.loadURL('http://localhost:3500');
 
     // ChromiumのDevツールを開く
     mainWindow.webContents.openDevTools();
