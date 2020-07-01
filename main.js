@@ -5,11 +5,13 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow = null;
 app.on('ready', () => {
     // webServer
-    const webProc = require('child_process');
+    // const webProc = require('child_process');
     // サーバーの実行
+    /*
     var server = webProc.spawn(
         "node", ['server.js', '/Users/haruto/Desktop/server/1.12.2/GtT1.12.2', 'minecraft_server.1.12.2.jar'], { cwd: __dirname } // サーバーファイルのディレクトリ
     );
+    //*/
 
 
     // mainWindowを作成（windowの大きさや、Kioskモードにするかどうかなどもここで定義できる）
