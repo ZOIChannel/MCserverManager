@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node/http" />
 import { Arch } from "builder-util";
 import { CancellationToken, PublishConfiguration, PublishProvider } from "builder-util-runtime";
 import { PublishContext, Publisher, PublishOptions } from "electron-publish";

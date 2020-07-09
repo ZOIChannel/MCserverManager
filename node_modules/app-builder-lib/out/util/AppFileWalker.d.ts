@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Filter } from "builder-util/out/fs";
 import { Stats } from "fs-extra";
 import { FileMatcher } from "../fileMatcher";

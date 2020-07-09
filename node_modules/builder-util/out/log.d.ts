@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import _debug from "debug";
 import WritableStream = NodeJS.WritableStream;
 export declare const debug: _debug.Debugger;

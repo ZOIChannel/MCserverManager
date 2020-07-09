@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Stats } from "fs-extra";
 export declare const MAX_FILE_REQUESTS = 8;
 export declare const CONCURRENCY: {

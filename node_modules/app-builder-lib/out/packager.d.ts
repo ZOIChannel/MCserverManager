@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Arch, DebugLogger, TmpDir } from "builder-util";
 import { CancellationToken } from "builder-util-runtime";
 import { EventEmitter } from "events";

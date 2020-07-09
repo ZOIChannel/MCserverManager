@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { DebugLogger, ExtraSpawnOptions } from "builder-util";
 import { ExecFileOptions, SpawnOptions } from "child_process";
 export declare class VmManager {

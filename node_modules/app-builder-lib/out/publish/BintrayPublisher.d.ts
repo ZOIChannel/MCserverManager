@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Arch } from "builder-util";
 import { BintrayOptions } from "builder-util-runtime";
 import { ClientRequest } from "http";

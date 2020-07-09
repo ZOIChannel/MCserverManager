@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Arch, ArchType } from "builder-util";
 import { AllPublishOptions } from "builder-util-runtime";
 import { SnapStoreOptions } from "./publish/SnapStorePublisher";
