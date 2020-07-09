@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#server {
+    width: 75px;
+    height: 100%;
+    background-color: #aaaaaa;
+}
+
+#logo {
+    width: 75px;
+    height: 75px;
+    background-image: url(./server/スクリーンショット\ 2020-06-15\ 17.37.28.png);
+    background-size: cover;
+}
+
+.servers {
+    width: 100%;
+    height: calc(100% - 75px - 25px);
+    margin-top: 25px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.server {
+    width: 75px;
+    height: 75px;
+    position: relative;
+}
+
+.server-line {
+    width: 60px;
+    height: 60px;
+    margin: calc((75px - 60px) / 2);
+    border-radius: calc(60px / 2);
+    position: absolute;
+}
+
+.server-line-ready {
+    background-color: #ffffff;
+}
+
+.server-line-online {
+    background-color: #80ff80;
+}
+
+.server-line-error {
+    background-color: #ff8080;
+}
+
+.server-img {
+    width: 50px;
+    height: 50px;
+    margin: calc((75px - 50px) / 2);
+    border-radius: 25px;
+    background-image: url(./server/スクリーンショット\ 2020-06-15\ 17.37.28.png);
+    background-size: cover;
+    position: absolute;
+    object-position: center;
+}
+
+.server-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
+    top: calc((75px - 10px) / 2);
+    left: -5px;
+}
+
+.server-dot-none {
+    background: none;
+}
+
+#main {
+    width: calc(100% - 75px - 256px);
+    height: 100%;
+    background-color: #dddddd;
+}
+
+#about {
+    width: 100%;
+    height: 128px;
+    background-color: #acacac;
+}
+
+#players {
+    width: 256px;
+    height: 100%;
+    background-color: #bbbbbb;
+}
